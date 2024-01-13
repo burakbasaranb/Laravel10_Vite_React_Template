@@ -31,14 +31,14 @@ php artisan serve
 npm install
 ```
 
-### 3.1 Install Additional Dependencies
+### 3.1. Install Additional Dependencies
 
 ```bash
 npm install --save-dev @vitejs/plugin-react
 npm install --save-dev react react-dom
 ```
 
-### 3.2 Test npm-watch
+### 3.2. Test npm run
 
 ```bash
 npm run dev
@@ -48,7 +48,8 @@ npm run dev
 
 Open vite.config.js and add react() to the plugin.
 
-Path: /vite.config.js
+`Path:` /vite.config.js
+
 ```javascript
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
@@ -67,9 +68,9 @@ export default defineConfig({
 
 ## 5. Publish React Page
 
-### 5.1 Create index.jsx
+### 5.1. Create index.jsx
 
-Path: /resources/js/index.jsx
+`Path:` /resources/js/index.jsx
 
 ```jsx
 import React, { Component } from 'react';
@@ -90,17 +91,19 @@ const root = createRoot(container);
 root.render(<Index />);
 ```
 
-### 5.2 Setup app.jsx
+### 5.2. Setup app.jsx
 
-Path: /resources/js/app.jsx
+`Path:` /resources/js/app.jsx
 
 ```jsx
-import './index';
+import './bootstrap.js';
+
+import './index.jsx';
 ```
 
-### 5.3 Create index.blade.php
+### 5.3. Create index.blade.php
 
-Path: /resources/views/index.blade.php
+`Path:` /resources/views/index.blade.php
 
 ```html
 <!DOCTYPE html>
@@ -122,7 +125,7 @@ Path: /resources/views/index.blade.php
 
 ### 6. Redirect All Traffic to index.blade.php
 
-Path: /resources/routes/web.php
+`Path:` /resources/routes/web.php
 
 ```php
 Route::view('/{path?}','index')->where('path','.+');
@@ -130,7 +133,7 @@ Route::view('/{path?}','index')->where('path','.+');
 
 ### 7. Restart
 
-Path: /resources/routes/web.php
+`Path:` /resources/routes/web.php
 
 ```bash
 npm run dev
