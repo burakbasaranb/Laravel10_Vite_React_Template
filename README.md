@@ -6,44 +6,44 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-#Laravel 10, Vite, React Template
+# Laravel 10, Vite, React Template
 
 This template provides a structured setup for building Laravel applications with Vite as the frontend tool and React as the JavaScript library.
 
 ##Installation
 
-###1. Laravel Install
+### 1. Laravel Install
 
 ```bash
 composer create-project laravel/laravel Laravel10_Vite_React_Template --prefer-dist
 ```
 
-###2. Start Laravel
+### 2. Start Laravel
 
 ```bash
 php artisan serve
 ```
 
-###3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-###3.1 Install Additional Dependencies
+### 3.1 Install Additional Dependencies
 
 ```bash
 npm install --save-dev @vitejs/plugin-react
 npm install --save-dev react react-dom
 ```
 
-###3.2 Test npm-watch
+### 3.2 Test npm-watch
 
 ```bash
 npm run dev
 ```
 
-###4. Setup React to Laravel
+### 4. Setup React to Laravel
 
 Open vite.config.js and add react() to the plugin.
 
@@ -63,9 +63,9 @@ export default defineConfig({
 });
 ```
 
-##5. Publish React Page
+## 5. Publish React Page
 
-###5.1 Create index.jsx
+### 5.1 Create index.jsx
 
 Path: /resources/js/index.jsx
 
@@ -88,7 +88,7 @@ const root = createRoot(container);
 root.render(<Index />);
 ```
 
-###5.2 Setup app.jsx
+### 5.2 Setup app.jsx
 
 Path: /resources/js/app.jsx
 
@@ -96,7 +96,7 @@ Path: /resources/js/app.jsx
 import './index';
 ```
 
-###5.3 Create index.blade.php
+### 5.3 Create index.blade.php
 
 Path: /resources/views/index.blade.php
 
@@ -118,7 +118,7 @@ Path: /resources/views/index.blade.php
 </html>
 ```
 
-###6. Redirect All Traffic to index.blade.php
+### 6. Redirect All Traffic to index.blade.php
 
 Path: /resources/routes/web.php
 
@@ -126,7 +126,7 @@ Path: /resources/routes/web.php
 Route::view('/{path?}','index')->where('path','.+');
 ```
 
-###7. Restart
+### 7. Restart
 
 Path: /resources/routes/web.php
 
