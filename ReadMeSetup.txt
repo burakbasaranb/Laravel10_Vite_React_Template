@@ -1,4 +1,4 @@
-(1) laravel install
+(1) laravel install 
 	composer create-project laravel/laravel Laravel10_Vite_React_Template --prefer-dist
  
 (2) start laravel
