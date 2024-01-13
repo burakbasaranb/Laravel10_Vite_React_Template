@@ -7,6 +7,136 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Laravel 10, Vite, React Template
+
+This template provides a structured setup for building Laravel applications with Vite as the frontend tool and React as the JavaScript library.
+
+## Installation
+
+### 1. Laravel Install
+
+```bash
+composer create-project laravel/laravel Laravel10_Vite_React_Template --prefer-dist
+```
+
+### 2. Start Laravel
+
+```bash
+php artisan serve
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3.1. Install Additional Dependencies
+
+```bash
+npm install --save-dev @vitejs/plugin-react
+npm install --save-dev react react-dom
+```
+
+### 3.2. Test npm run
+
+```bash
+npm run dev
+```
+
+### 4. Setup React to Laravel
+
+Open vite.config.js and add react() to the plugin.
+
+`Path:` [/vite.config.js]()
+
+```javascript
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    laravel({
+      input: ['resources/css/app.css', 'resources/js/app.jsx'],
+      refresh: true,
+    }),
+  ],
+});
+```
+
+## 5. Publish React Page
+
+### 5.1. Create index.jsx
+
+`Path:` [/resources/js/index.jsx]()
+
+```jsx
+import React, { Component } from 'react';
+import { createRoot } from 'react-dom/client';
+
+class Index extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello React World</h1>
+      </div>
+    );
+  }
+}
+
+const container = document.getElementById('index');
+const root = createRoot(container);
+root.render(<Index />);
+```
+
+### 5.2. Setup app.jsx
+
+`Path:` [/resources/js/app.jsx]() 
+
+```jsx
+import './bootstrap.js';
+
+import './index.jsx';
+```
+
+### 5.3. Create index.blade.php
+
+`Path:` [/resources/views/index.blade.php]()  
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Laravel 10 & React JS </title>
+  <link type="text/html" href="{{ asset('css/app.css') }}" />
+</head>
+
+<body>
+  <div id="index"></div>
+  @viteReactRefresh
+  @vite(['resources/js/app.jsx'])
+</body>
+
+</html>
+```
+
+### 6. Redirect All Traffic to index.blade.php
+
+`Path:` [/resources/routes/web.php]()
+
+```php
+Route::view('/{path?}','index')->where('path','.+');
+```
+
+### 7. Restart
+
+```bash
+npm run dev
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
