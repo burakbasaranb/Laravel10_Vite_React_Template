@@ -6,11 +6,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
 # Laravel 10, Vite, React Template
 
 This template provides a structured setup for building Laravel applications with Vite as the frontend tool and React as the JavaScript library.
 
-##Installation
+## Installation
 
 ### 1. Laravel Install
 
