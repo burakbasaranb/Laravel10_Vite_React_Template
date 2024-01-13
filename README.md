@@ -48,6 +48,7 @@ npm run dev
 
 Open vite.config.js and add react() to the plugin.
 
+Path: /vite.config.js
 ```javascript
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
