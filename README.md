@@ -48,7 +48,7 @@ npm run dev
 
 Open vite.config.js and add react() to the plugin.
 
-`Path:` /vite.config.js
+`Path:` [/vite.config.js]()
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -70,7 +70,7 @@ export default defineConfig({
 
 ### 5.1. Create index.jsx
 
-`Path:` /resources/js/index.jsx
+`Path:` [/resources/js/index.jsx]()
 
 ```jsx
 import React, { Component } from 'react';
@@ -93,7 +93,7 @@ root.render(<Index />);
 
 ### 5.2. Setup app.jsx
 
-`Path:` /resources/js/app.jsx
+`Path:` [/resources/js/app.jsx]() 
 
 ```jsx
 import './bootstrap.js';
@@ -103,7 +103,7 @@ import './index.jsx';
 
 ### 5.3. Create index.blade.php
 
-`Path:` /resources/views/index.blade.php
+`Path:` [/resources/views/index.blade.php]()  
 
 ```html
 <!DOCTYPE html>
@@ -125,7 +125,7 @@ import './index.jsx';
 
 ### 6. Redirect All Traffic to index.blade.php
 
-`Path:` /resources/routes/web.php
+`Path:` [/resources/routes/web.php]()
 
 ```php
 Route::view('/{path?}','index')->where('path','.+');
@@ -133,7 +133,7 @@ Route::view('/{path?}','index')->where('path','.+');
 
 ### 7. Restart
 
-`Path:` /resources/routes/web.php
+`Path:` [/resources/routes/web.php]() 
 
 ```bash
 npm run dev
