@@ -133,8 +133,6 @@ Route::view('/{path?}','index')->where('path','.+');
 
 ### 7. Restart
 
-`Path:` [/resources/routes/web.php]() 
-
 ```bash
 npm run dev
 ```
